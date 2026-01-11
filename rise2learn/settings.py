@@ -56,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = 'rise2learn.urls'
@@ -138,12 +139,21 @@ TEMPLATES[0]['DIRS'] = [
     BASE_DIR / 'website' / 'templates',
 ]
 
-# Static files
-STATIC_URL = '/static/'
+# Static files (CSS, JavaScript, Images)
 
+STATIC_URL = "/static/"
+
+# Where collectstatic will put files (REQUIRED for production)
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+# Where Django looks for your source static files
 STATICFILES_DIRS = [
-    BASE_DIR / 'website' / 'static',
+    BASE_DIR / "website" / "static",
 ]
+
+# WhiteNoise static file handling
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 
 
 # Default primary key field type
