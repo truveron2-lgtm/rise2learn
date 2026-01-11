@@ -25,7 +25,15 @@ SECRET_KEY = 'django-insecure-c2hy@xo&-tk^e&y*vgt_cuxo-r3z*$-+3b#0@&e)&a5$h33$)@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+import os
+
+ALLOWED_HOSTS = [
+    "rise2learn.org",
+    "www.rise2learn.org",
+    "rise2learn-webservice.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
 
 
 # Application definition
